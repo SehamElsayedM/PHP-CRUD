@@ -14,7 +14,6 @@ if (isset($_POST['send'])) {
     $Position = $_POST['position'];
     $Password = $_POST['password'];
     $Gender = $_POST['gender'];
-    print_r($_FILES);
     $ImageName = time() . rand(0, 255) . $_FILES['image']['name'];
     $tmpName = $_FILES['image']['tmp_name'];
     $location = 'uploaded/' . $ImageName;
@@ -100,9 +99,9 @@ $xx = mysqli_fetch_assoc($selectQuery);
 $selectTheme = "SELECT * FROM theem WHERE id=1";
 $theem = mysqli_query($con, $selectTheme);
 $x = mysqli_fetch_assoc($theem);
+
 if(isset($_GET['color'])) {
     $color = $_GET['color'];
-
     $update = "UPDATE theem SET `color`='$color' WHERE id=1";
     $Query = mysqli_query($con, $update);
     header("Location: index.php");
@@ -253,7 +252,6 @@ if(isset($_GET['color'])) {
 
 
 
-    <script src="./script.js"></script>
 </body>
 
 </html>
